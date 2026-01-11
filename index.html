@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YAO Xiang 的前端作品集</title>
-  <link rel="stylesheet" href="./css/ProjectSet.css">
-  <!-- Micromodal CSS (可選) -->
-  <link rel="stylesheet" href="https://unpkg.com/micromodal/dist/micromodal.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAO Xiang｜前端專案作品集</title>
+  <link rel="stylesheet" href="./css/ProjectSet.css" />
 </head>
+
 <body>
-  <header>
-    <h1>前端專案作品集 / PM 案例展示</h1>
-    <p>展示開發作品、練習專案與 PM 案例</p>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <h1>前端專案作品集</h1>
+    <p class="subtitle">
+      以 PM 邏輯拆解需求，使用原生 JavaScript 實作前端功能
+    </p>
   </header>
 
-  <main>
-    <div id="portfolio" class="portfolio-container">
-      <!-- JS 動態生成卡片 -->
-    </div>
+  <!-- ===== Main ===== -->
+  <main class="portfolio">
+
+    <!-- JS 將在此插入專案卡 -->
+    <section id="project-list" class="project-list">
+      <!-- project-card（由 JS 產生） -->
+    </section>
+
   </main>
 
-  <!-- Modal -->
-  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-        <header class="modal__header">
-          <h2 class="modal__title" id="modal-1-title"></h2>
-          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-        </header>
-        <main class="modal__content" id="modal-1-content"></main>
-        <footer class="modal__footer">
-          <a href="#" id="modal-1-link" target="_blank">查看 Demo</a>
-        </footer>
+  <!-- ===== Project Modal（骨架） ===== -->
+  <div id="project-modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">×</button>
+
+      <!-- JS 填入內容 -->
+      <h2 id="modal-title"></h2>
+
+      <div id="modal-body">
+        <!-- 專案詳細說明 -->
+      </div>
+
+      <div class="modal-actions">
+        <a id="modal-demo" href="#" target="_blank" class="btn primary">查看 Demo</a>
+        <a id="modal-ppt" href="#" target="_blank" class="btn secondary">查看 PPT</a>
       </div>
     </div>
   </div>
 
-  <script type="module" src="databaseName.js"></script>
-  <script type="module" src="./js/database.js"></script>
-  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+  <!-- JS 之後再加 -->
+  <!-- <script type="module" src="databaseName.js"></script> -->
+  <!-- <script type="module" src="database.js"></script> -->
+
 </body>
 </html>
