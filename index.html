@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAO Xiang 的前端作品集</title>
+  <link rel="stylesheet" href="./css/ProjectSet.css">
+  <!-- Micromodal CSS (可選) -->
+  <link rel="stylesheet" href="https://unpkg.com/micromodal/dist/micromodal.min.css">
+</head>
+<body>
+  <header>
+    <h1>前端專案作品集 / PM 案例展示</h1>
+    <p>展示開發作品、練習專案與 PM 案例</p>
+  </header>
+
+  <main>
+    <div id="portfolio" class="portfolio-container">
+      <!-- JS 動態生成卡片 -->
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-title"></h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content"></main>
+        <footer class="modal__footer">
+          <a href="#" id="modal-1-link" target="_blank">查看 Demo</a>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="databaseName.js"></script>
+  <script type="module" src="./js/database.js"></script>
+  <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+</body>
+</html>
