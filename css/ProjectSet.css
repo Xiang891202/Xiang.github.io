@@ -1,203 +1,569 @@
-/* ===== Base Reset ===== */
-* {
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #1f2937;
+    --light-bg: #f8fafc;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f9fafb;
-  color: #222;
-  line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
 }
 
 /* ===== Header ===== */
 .site-header {
-  text-align: center;
-  padding: 3rem 1.5rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .site-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .subtitle {
-  margin-top: 0.75rem;
-  color: #6b7280;
-  font-size: 1rem;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* ===== Portfolio Layout ===== */
-.portfolio {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem;
+/* ===== 圖卡容器 ===== */
+.project-cards-container {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 1.5rem;
 }
 
-/* ===== Project List ===== */
-.project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-/* ===== Project Card ===== */
 .project-card {
-  display: flex;
-  background: #ffffff;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2.5rem;
+    transition: var(--transition);
+    position: relative;
+    min-height: 320px;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* 左側圖片 */
-.project-image {
-  flex: 0 0 360px;
-  background-color: #e5e7eb;
+/* 左邊圖片區域 */
+.card-image {
+    flex: 0 0 45%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
 }
 
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 右側內容 */
-.project-content {
-  flex: 1;
-  padding: 2.2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-content h2 {
-  margin: 0;
-  font-size: 1.6rem;
-}
-
-.project-desc {
-  margin: 1rem 0;
-  color: #374151;
-}
-
-/* 重點條列 */
-.project-points {
-  padding-left: 1.2rem;
-  margin-bottom: 1.8rem;
-}
-
-.project-points li {
-  margin-bottom: 0.4rem;
-  color: #4b5563;
-}
-
-/* 行動區 */
-.project-actions {
-  margin-top: auto;
-  display: flex;
-  gap: 1rem;
-}
-
-/* ===== Buttons ===== */
-.btn {
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
-}
-
-.btn.primary {
-  background-color: #2563eb;
-  color: #ffffff;
-}
-
-.btn.primary:hover {
-  background-color: #1d4ed8;
-}
-
-.btn.secondary {
-  background-color: transparent;
-  color: #2563eb;
-  border-color: #2563eb;
-}
-
-.btn.secondary:hover {
-  background-color: #2563eb;
-  color: #ffffff;
-}
-
-/* ===== Modal ===== */
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-}
-
-.modal.hidden {
-  display: none;
-}
-
-.modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-}
-
-.modal-content {
-  position: relative;
-  max-width: 720px;
-  margin: 6vh auto;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 2.5rem;
-  z-index: 1;
-}
-
-.modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-.modal-actions {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-}
-
-/* ===== RWD ===== */
-@media (max-width: 900px) {
-  .project-card {
-    flex-direction: column;
-  }
-
-  .project-image {
+.card-image img {
     width: 100%;
-    height: 220px;
-  }
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
 
-  .project-content {
-    padding: 1.8rem;
-  }
+.project-card:hover .card-image img {
+    transform: scale(1.05);
+}
 
-  .modal-content {
-    margin: 8vh 1rem;
-    padding: 2rem;
-  }
+/* 圖片上的標籤 */
+.image-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(37, 99, 235, 0.95);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+/* 右邊內容區域 */
+.card-content {
+    flex: 0 0 55%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* 技術標籤 */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.tech-tag {
+    background: #f1f5f9;
+    color: var(--secondary-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.tech-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* 功能清單 */
+.features {
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #374151;
+}
+
+.feature-item::before {
+    content: "✓";
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* 按鈕 */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    width: fit-content;
+    border: 2px solid transparent;
+}
+
+.project-link:hover {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.project-link i {
+    margin-left: 8px;
+    transition: var(--transition);
+}
+
+.project-link:hover i {
+    transform: translateX(4px);
+}
+
+/* 詳細內容區域 */
+.project-detail-container {
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 0 1.5rem;
+}
+
+.project-detail {
+    background: white;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: var(--card-shadow);
+}
+
+.detail-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ===== RWD 響應式設計 ===== */
+@media (max-width: 992px) {
+    .site-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .card-title {
+        font-size: 1.6rem;
+    }
+    
+    .card-description {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .card-image,
+    .card-content {
+        flex: 0 0 100%;
+    }
+    
+    .card-image {
+        height: 250px;
+    }
+    
+    .card-content {
+        padding: 2rem;
+    }
+    
+    .site-header {
+        padding: 2.5rem 1rem;
+    }
+    
+    .site-header h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .project-detail {
+        padding: 2rem;
+    }
+    
+    .detail-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-cards-container,
+    .project-detail-container {
+        padding: 0 1rem;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
+    }
+    
+    .tech-tags {
+        gap: 0.6rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.85rem;
+        padding: 5px 12px;
+    }
+    
+    .project-link {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .project-detail {
+        padding: 1.5rem;
+    }
+}
+
+/* ===== 詳細內容彈出視窗 ===== */
+.detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.detail-overlay.active {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.detail-modal {
+    background: white;
+    border-radius: 16px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease forwards;
+    transform: translateY(30px);
+}
+
+@keyframes slideUp {
+    to { transform: translateY(0); }
+}
+
+/* 關閉按鈕 */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4b5563;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* 詳細內容標頭 */
+.detail-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem 2.5rem 2.5rem;
+    border-radius: 16px 16px 0 0;
+    position: relative;
+}
+
+.detail-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.detail-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+/* 詳細內容主體 */
+.detail-content {
+    padding: 2.5rem;
+}
+
+.detail-section {
+    margin-bottom: 2.5rem;
+}
+
+.detail-section h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+/* 功能特色網格 */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.feature-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: #f0f9ff;
+}
+
+.feature-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.feature-card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 技術棧標籤 */
+.tech-stack {
+    margin-top: 2rem;
+}
+
+.tech-stack h3 {
+    margin-bottom: 1rem;
+}
+
+/* 按鈕容器 */
+.detail-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.detail-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ===== RWD 響應式設計 - 彈出視窗 ===== */
+@media (max-width: 768px) {
+    .detail-modal {
+        max-height: 95vh;
+        margin: 10px;
+    }
+    
+    .detail-header {
+        padding: 2.5rem 1.5rem 2rem;
+    }
+    
+    .detail-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .detail-content {
+        padding: 1.5rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-actions {
+        flex-direction: column;
+    }
+    
+    .detail-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-header {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    
+    .detail-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .close-btn {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
 }
