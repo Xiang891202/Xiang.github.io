@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YAO Xiang｜前端專案作品集</title>
-  <link rel="stylesheet" href="./css/ProjectSet.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YAO Xiang｜前端專案作品集 - 篩選系統專案展示</title>
+    <link rel="stylesheet" href="./css/ProjectSet.css" />
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    <meta name="description" content="YAO Xiang 的前端作品集，展示以產品經理思維設計的多重篩選器系統專案">
+    <meta name="keywords" content="前端開發, JavaScript, 篩選系統, 作品集, UI/UX設計">
 </head>
 
 <body>
 
-  <!-- ===== Header ===== -->
-  <header class="site-header">
-    <h1>前端專案作品集</h1>
-    <p class="subtitle">
-      以 PM 邏輯拆解需求，使用原生 JavaScript 實作前端功能
-    </p>
-  </header>
+    <!-- ===== Header ===== -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1>YAO Xiang｜前端專案作品集</h1>
+            <p class="subtitle">
+                以產品經理思維拆解需求，用原生 JavaScript 實作前端功能<br>
+                專注於篩選系統、互動介面與使用者體驗設計
+            </p>
+        </div>
+    </header>
 
-  <!-- ===== Main ===== -->
-  <main class="portfolio">
+    <!-- ===== 專案圖卡展示區 ===== -->
+    <main>
+        <section id="product" aria-label="專案作品展示"></section>
+    </main>
 
-    <!-- JS 將在此插入專案卡 -->
-    <section id="project-list" class="project-list">
-      <!-- project-card（由 JS 產生） -->
-    </section>
+    <!-- ===== 頁尾 ===== -->
+    <footer style="
+        text-align: center;
+        padding: 2rem;
+        color: #6b7280;
+        font-size: 0.9rem;
+        border-top: 1px solid #e5e7eb;
+        background: white;
+        margin-top: 2rem;
+    ">
+        <p>© 2024 YAO Xiang 前端作品集 | 專注於使用者體驗與互動設計</p>
+    </footer>
 
-  </main>
-
-  <!-- ===== Project Modal（骨架） ===== -->
-  <div id="project-modal" class="modal hidden">
-    <div class="modal-overlay"></div>
-
-    <div class="modal-content">
-      <button id="modal-close" class="modal-close">×</button>
-
-      <!-- JS 填入內容 -->
-      <h2 id="modal-title"></h2>
-
-      <div id="modal-body">
-        <!-- 專案詳細說明 -->
-      </div>
-
-      <div class="modal-actions">
-        <a id="modal-demo" href="#" target="_blank" class="btn primary">查看 Demo</a>
-        <a id="modal-ppt" href="#" target="_blank" class="btn secondary">查看 PPT</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- JS 之後再加 -->
-  <!-- <script type="module" src="databaseName.js"></script> -->
-  <!-- <script type="module" src="database.js"></script> -->
-
+    <!-- 詳細內容彈出視窗會由 JavaScript 動態產生 -->
+    <script type="module" src="./js/database.js"></script>
 </body>
 </html>
